@@ -1,0 +1,181 @@
+CameraLookAt 0 0 0
+CameraLookFrom 0 0 2
+CameraLookUp 0 1 0
+FieldOfView 60
+
+AmbientLight 0.0 0.0 0.0
+BackgroundColor 0. 0. 0.
+
+AreaLight
+    LightColor 1. 1. 1.
+    Center 0. 2. 0.
+    Aim 0. 0. 0.
+    Up 0. 0. 1.
+    Width 2.
+    Height 2.
+    Resolution .2
+
+# DirectionalLight
+#    Color 1. 1. 1.
+#    DirectionToLight 0 1.5 0.
+
+# 0 walls
+BlinnPhong
+    Diffuse Color .2 .2 .2
+    Specular Color 1. 1. 1.
+    Shininess 8
+    diffuseK .5
+    specularK .3
+    ambientK .2
+
+# 1 red sphere
+Lambertian
+    Diffuse Color .9 .1 .1
+
+# 2 white sphere
+Lambertian
+    Diffuse Color 1. 1. 1.
+
+# 3 transparent
+Transmission
+    ior 2.0
+    jitterAmt 0.1
+
+# 4 reflective
+Reflection
+    jitterAmt 0.1
+
+# 5 pyramid
+BlinnPhong
+    Diffuse Color 0.36 0.54 0.40
+    Specular Color 1. 1. 1.
+    Shininess 8.
+    DiffuseK .6
+    SpecularK .3
+    AmbientK .1
+
+# 6 fresnel
+FresnelTransmission
+    reflAmt 0.2
+    ior 2.0
+    reflJitter 0.0
+    transJitter 0.0
+
+# ---------- GEOMETRY ----------
+
+Sphere
+    Center 0.41 0 0
+    Radius 0.4
+    Material 1
+
+Sphere
+    Center -0.41 0 0
+    Radius 0.4
+    Material 2
+
+Sphere
+    Center 0.3 -0.2 1.0
+    Radius 0.1
+    Material 3
+
+Cylinder
+    -0.5 0.7 -0.7
+    0.5 0.7 -0.7
+    Radius 0.3
+    Material 4
+
+# ground
+Triangle
+    -1 -0.8 1.0
+    1 -0.8 1.0
+    -1 -0.8 -1.0
+    Material 0
+
+Triangle
+    1 -0.8 1.0
+    1 -0.8 -1.0
+    -1 -0.8 -1.0
+    Material 0
+
+# left wall
+Triangle
+    -1 -0.8 1.0
+    -1 -0.8 -1.0
+    -1 1.5 1.0
+    Material 0
+
+Triangle
+    -1 -0.8 -1.0
+    -1 1.5 -1.0
+    -1 1.5 1.0
+    Material 0
+
+# back wall
+Triangle
+    -1 -0.8 -1.0
+    1 -0.8 -1.0
+    -1 1.5 -1.0
+    Material 0
+
+Triangle
+    1 -0.8 -1.0
+    1 1.5 -1.0
+    -1 1.5 -1.0
+    Material 0
+
+# right wall
+Triangle
+    1 -0.8 -1.0
+    1 -0.8 1.0
+    1 1.5 1.0
+    Material 0
+
+Triangle
+    1 1.5 1.0
+    1 1.5 -1.0
+    1 -0.8 -1.0
+    Material 0
+
+# behind the camera
+Triangle
+    1 -2 2.1
+    -1 -2 2.1
+    1 2.5 2.1
+    Material 0
+
+Triangle
+    -1 -2 2.1
+    -1 2.5 2.1
+    1 2.5 2.1
+    Material 0
+
+# pyramid
+Triangle
+    -0.3 -0.8 0.7
+    0.3 -0.8 0.7
+    0.0 -0.4 0.6
+    Material 5
+
+Triangle
+    0.3 -0.8 0.7
+    0.3 -0.8 0.5
+    0.0 -0.4 0.6
+    Material 5
+
+Triangle
+    0.3 -0.8 0.5
+    -0.3 -0.8 0.5
+    0.0 -0.4 0.6
+    Material 5
+
+Triangle
+    -0.3 -0.8 0.5
+    -0.3 -0.8 0.7
+    0.0 -0.4 0.6
+    Material 5
+
+# fresnel sphere
+Sphere
+    Center -0.3 0.2 0.8
+    Radius 0.15
+    Material 6

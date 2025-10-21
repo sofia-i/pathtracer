@@ -1,0 +1,89 @@
+CameraLookAt 0 0 0
+CameraLookFrom 0 0 2
+CameraLookUp 0 1 0
+FieldOfView 60
+
+AmbientLight 0.0 0.0 0.0
+BackgroundColor 0. 0. 0.
+
+AreaLight
+    LightColor 1. 1. 1.
+    Center 0. 2. 0.
+    Aim 0. 0. 0.
+    Up 0. 0. 1.
+    Width 2.
+    Height 2.
+    Resolution .2
+
+BlinnPhong
+    Diffuse Color .9 .1 .1
+    Specular Color 1. 1. 1.
+    Shininess 8
+    diffuseK .5
+    specularK .3
+    ambientK .2
+
+BlinnPhong
+    Diffuse Color .2 .2 .2
+    Specular Color 1. 1. 1.
+    Shininess 8
+    diffuseK .5
+    specularK .3
+    ambientK .2
+
+Sphere
+    Center 0 0 0
+    Radius 0.5
+    Material 0
+
+# ground
+Triangle
+    -1 -0.8 1.0
+    1 -0.8 1.0
+    -1 -0.8 -1.0
+    Material 1
+
+Triangle
+    1 -0.8 1.0
+    1 -0.8 -1.0
+    -1 -0.8 -1.0
+    Material 1
+
+# left wall
+Triangle
+    -1 -0.8 1.0
+    -1 -0.8 -1.0
+    -1 0.8 1.0
+    Material 1
+
+Triangle
+    -1 -0.8 -1.0
+    -1 0.8 -1.0
+    -1 0.8 1.0
+    Material 1
+
+# back wall
+Triangle
+    -1 -0.8 -1.0
+    1 -0.8 -1.0
+    -1 0.8 -1.0
+    Material 1
+
+Triangle
+    1 -0.8 -1.0
+    1 0.8 -1.0
+    -1 0.8 -1.0
+    Material 1
+
+# right wall
+Triangle
+    1 -0.8 -1.0
+    1 -0.8 1.0
+    1 0.8 1.0
+    Material 1
+
+Triangle
+    1 0.8 1.0
+    1 0.8 -1.0
+    1 -0.8 -1.0
+    Material 1

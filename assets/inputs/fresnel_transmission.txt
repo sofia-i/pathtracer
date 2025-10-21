@@ -1,0 +1,39 @@
+CameraLookAt 0 0 0
+CameraLookFrom 0 0 -2
+CameraLookUp 0 1 0
+FieldOfView 60
+
+AmbientLight 0.0 0.0 0.0
+
+BackgroundTexture assets/textures/HDR_111_Parking_Lot_2_Bg.jpg
+
+Phong
+    SpecularReflectance Color 1 1 1
+    Shininess 8
+
+BlinnPhong
+    DiffuseReflectance Image assets/textures/checkered.jpeg
+    SpecularReflectance Color 1 1 1
+    shininess 8
+    Ambient Color 1 1 1
+    diffuseK 0.6
+    specularK 0.3
+    ambientK 0.1
+
+Reflection
+    jitter 0.5
+
+Transmission
+    ior 2.0
+    jitter 0.5
+
+FresnelTransmission
+    reflAmt 0.0
+    ior 2.0
+    reflJitter 0.0
+    transJitter 0.0
+
+Sphere
+    Center 0 0 0
+    Radius 0.5
+    Material 4
