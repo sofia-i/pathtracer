@@ -21,7 +21,7 @@ public:
     }
 
     Eigen::Vector3d sample(BRDFInfo info, std::vector<double> &iors, double &prob, bool &valid) override {
-        // TODO: i have no idea if this is valid
+        // TODO: validate
         double u = dist(mt);
         if(u < diffuseK) {
             Eigen::Vector3d sample = lambertian.sample(info.normal, prob, valid);

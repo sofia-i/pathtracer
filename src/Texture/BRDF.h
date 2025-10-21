@@ -29,29 +29,16 @@ public:
     }
 
     /**
-     *
-     * @param random
-     * @param[out] prob
-     * @param[out] valid
+     * Sample the next ray direction
+     * @param[in] info Ray hit information
+     * @param[in,out] iors Stack of ior values along path
+     * @param[out] prob probability of output direction
+     * @param[out] valid Valid sample was found
      * @return outgoing direction
      */
-    // virtual Eigen::Vector3d sample(double random, double& prob, bool& valid) = 0;
-    // Eigen::Vector3d sample(double& prob, bool& valid);
-
     virtual Eigen::Vector3d sample(BRDFInfo info, std::vector<double>& iors, double& prob, bool& valid) {
         valid = false;
     }
-
-    /*
-    virtual Eigen::Vector3d sample(const Eigen::Vector3d& local, double& prob, bool& valid) {
-        valid = false;
-    }
-     */
-
-    // virtual Eigen::Vector3d sample(const Eigen::Vector3d& normal,
-    //                       const Eigen::Vector3d& toLight,
-    //                       double& prob,
-    //                       bool& valid) = 0;
 
     /**
      *
@@ -63,6 +50,17 @@ public:
                                  const Eigen::Vector3d& normal, const Eigen::Vector3d& point,
                                  double u, double v) = 0;
 
+    /**
+     * Get the intensity (color) based on viewing information (point, normal, view ray, normal, etc.)
+     * @param view
+     * @param normal
+     * @param half
+     * @param toLight
+     * @param point
+     * @param u
+     * @param v
+     * @return Intensity vector
+     */
     virtual Eigen::Vector3d evalIndirect(const Eigen::Vector3d& view, const Eigen::Vector3d& normal,
                                          const Eigen::Vector3d& half, const Eigen::Vector3d& toLight,
                                          const Eigen::Vector3d& point, double u, double v) = 0;
